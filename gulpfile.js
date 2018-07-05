@@ -10,6 +10,8 @@ class Gulp{
 		this.browserify  = require('browserify')
 		this.source      = require('vinyl-source-stream')
 		this.rename      = require('gulp-rename')
+		this.uglify      = require('gulp-uglify')
+		this.buffer      = require('vinyl-buffer')
 		this.createCommands();
 		this.gulp();
 		this.watch();
@@ -78,6 +80,8 @@ class Gulp{
 					.pipe(this.rename({
 						extname: '.bundle.js'
 					}))
+					.pipe(this.buffer())
+					.pipe(this.uglify())
 					.pipe(this.self.dest('./'))
 				})
 		})
