@@ -9,3 +9,7 @@
 @import '../base/includes/sizes.scss';
 @import '../base/includes/colors.scss';
 @import '../base/includes/fonts.scss';
+
+.error{
+	border: 1px solid red;
+}

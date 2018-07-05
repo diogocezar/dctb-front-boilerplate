@@ -1,18 +1,14 @@
-import { Util } from '../modules/util'
-
 class Index{
 	constructor(){
 		console.log('Start Index')
-		this.util = new Util()
-		this.checkEmpty()
+		window.validation.setAction(() => {
+			console.log('send')
+		})
 		this.getJson()
 	}
-	checkEmpty(){
-		console.log(this.util.isEmpty('Testing'))
-	}
 	getJson(){
-		this.util.fetch('http://api.icndb.com/jokes/random')
-		.then(data => { this.util.$('.container').innerHTML = data.value.joke })
+		window.util.fetch('http://api.icndb.com/jokes/random')
+		.then(data => { window.util.$('.container').innerHTML = data.value.joke })
 	}
 }
 

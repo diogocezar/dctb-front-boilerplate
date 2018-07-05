@@ -1,7 +1,7 @@
 {
 	"name": "dctb-front-boilerplate",
 	"version": "1.0.0",
-	"description": "Just a simple boilerplate to front-end stuffs using Gulp and Babel.",
+	"description": "Just a simple boilerplate to front-end stuffs using Gulp, Babel and Browserify",
 	"main": "index.js",
 	"scripts": {
 		"serve": "gulp serve",
@@ -11,25 +11,14 @@
 		"type": "git",
 		"url": "git+https://github.com/diogocezar/dctb-front-boilerplate.git"
 	},
-	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"keywords": ["babel", "browserify", "gulp", "modernjs", "front-end", "sass"],
+	"author": "Diogo Cezar <diogo@diogocezar.com>",
+	"license": "Apache",
 	"bugs": {
 		"url": "https://github.com/diogocezar/dctb-front-boilerplate/issues"
 	},
 	"homepage": "https://github.com/diogocezar/dctb-front-boilerplate#readme",
-	"browserify": {
-		"transform": [
-			[
-				"babelify",
-				{
-					"presets": [
-						"es2015"
-					]
-				}
-			]
-		]
-	},
+	"browserify": { "transform": [ ["babelify",	{"presets": ["es2015"] } ] ] },
 	"devDependencies": {
 		"babel-core": "^6.26.3",
 		"babel-preset-es2015": "^6.24.1",
@@ -46,8 +35,5 @@
 		"gulp-uglify": "^3.0.0",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0"
-	},
-	"dependencies": {
-		"jquery": "^3.3.1"
 	}
 }

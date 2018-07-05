@@ -25,9 +25,8 @@ class Gulp{
 				server: './'
 			})
 			this.self.watch('./assets/scss/**', ['scss'])
-			this.self.watch(['./js/**/*.js', '!./js/**/*.bundle.js'], ['js'])
+			this.self.watch(['./js/**/*.js', '!./js/**/*.bundle.js'], ['js', this.browserSync.reload])
 			this.self.watch('./*.html').on('change', this.browserSync.reload)
-			this.self.watch(['./js/**/*.js', '!./js/**/*.bundle.js']).on('change', this.browserSync.reload)
 		})
 		// Minify Images
 		this.self.task('imgmin', () => {
