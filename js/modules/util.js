@@ -10,5 +10,8 @@ export class Util {
                     resolve(data)
                 })
         })
-    }
+	}
+	$(selection){
+		return document.querySelector(selection);
+	}
 }

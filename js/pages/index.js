@@ -12,7 +12,7 @@ class Index{
 	}
 	getJson(){
 		this.util.fetch('http://api.icndb.com/jokes/random')
-		.then(data => { $('.container').empty().html(data.value.joke) })
+		.then(data => { this.util.$('.container').innerHTML = data.value.joke })
 	}
 }
 
