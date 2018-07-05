@@ -11,18 +11,37 @@
 		"type": "git",
 		"url": "git+https://github.com/diogocezar/dctb-front-boilerplate.git"
 	},
-	"keywords": ["babel", "browserify", "gulp", "modernjs", "front-end", "sass"],
+	"keywords": [
+		"babel",
+		"browserify",
+		"gulp",
+		"modernjs",
+		"front-end",
+		"sass"
+	],
 	"author": "Diogo Cezar <diogo@diogocezar.com>",
 	"license": "Apache",
 	"bugs": {
 		"url": "https://github.com/diogocezar/dctb-front-boilerplate/issues"
 	},
 	"homepage": "https://github.com/diogocezar/dctb-front-boilerplate#readme",
-	"browserify": { "transform": [ ["babelify",	{"presets": ["es2015"] } ] ] },
+	"browserify": {
+		"transform": [
+			[
+				"babelify",
+				{
+					"presets": [
+						"es2015"
+					]
+				}
+			]
+		]
+	},
 	"devDependencies": {
 		"babel-core": "^6.26.3",
 		"babel-preset-es2015": "^6.24.1",
 		"babelify": "^8.0.0",
+		"bootstrap": "^4.1.1",
 		"browser-sync": "^2.24.5",
 		"browserify": "^16.2.2",
 		"gulp": "^3.9.1",
@@ -33,6 +52,8 @@
 		"gulp-sass": "^4.0.1",
 		"gulp-svgo": "^1.5.4",
 		"gulp-uglify": "^3.0.0",
+		"jquery": "^3.3.1",
+		"popper.js": "^1.14.3",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0"
 	}
