@@ -8,7 +8,7 @@ class Index{
 	}
 	getJson(){
 		window.util.fetch('http://api.icndb.com/jokes/random')
-		.then(data => { window.util.$('.container').innerHTML = data.value.joke })
+		.then(data => { window.util.$('.load-joke').innerHTML = data.value.joke })
 	}
 }
 
