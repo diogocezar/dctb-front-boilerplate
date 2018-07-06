@@ -2,7 +2,7 @@
 	"name": "dctb-front-boilerplate",
 	"version": "1.0.0",
 	"description": "Just a simple boilerplate to front-end stuffs using Gulp, Babel and Browserify",
-	"main": "index.js",
+	"main": "gulpfile.js",
 	"scripts": {
 		"serve": "gulp serve",
 		"image": "gulp image",
@@ -59,8 +59,12 @@
 		"gulp-svgo": "^1.5.4",
 		"gulp-uglify": "^3.0.0",
 		"jquery": "^3.3.1",
+		"jquery.nicescroll": "^3.7.6",
+		"owl.carousel": "^2.3.4",
 		"popper.js": "^1.14.3",
+		"scrollreveal": "^3.4.0",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0"
-	}
+	},
+	"dependencies": {}
 }

@@ -24,7 +24,7 @@ class Gulp{
 		console.log(this.color(command, 'MAGENTA'), this.color(action, 'GREEN'))
 	}
 	logError(msg){
-		console.log(this.color('ERROR ', 'RED'), this.color(action, 'GREEN'))
+		console.log(this.color('ERROR ', 'RED'), this.color(msg, 'GREEN'))
 	}
 	createCommands(){
 		// BrowserSync
@@ -80,13 +80,14 @@ class Gulp{
 			]
 			const tasks = files.map((entry) => {
 				this.logCommand('JS', `Compiling file: ${entry}.`)
+				const self = this
 				return this.browserify({
 						debug: true,
 						entries : [entry]
 					})
 					.transform(this.babelify)
 					.bundle()
-					.on('error', (err) => {this.logError(err); this.emit('end') })
+					.on('error', function(err){self.logError(err); this.emit('end') })
 					.pipe(this.source(entry))
 					.pipe(this.rename({
 						extname: '.bundle.js'
@@ -118,7 +119,7 @@ class Gulp{
 		// Sass Changes
 		this.self.watch('./assets/scss/**', ['sass'])
 		// JavaScript Changes
-		this.self.watch(['./js/**/*.js', '!./js/**/*.bundle.js'], ['js'])
+		this.self.watch(['./js/**/*.js', '!./js/**/*.bundle.js'], ['js', this.browserSync.reload])
 		// HTML changes
 		this.self.watch('./*.html').on('change', () => {
 			this.logCommand('HTML', 'Changed')

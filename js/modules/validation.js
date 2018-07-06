@@ -1,23 +1,37 @@
 export class Validation {
 	constructor(){
+		// Imports
+		this.util     = window.util
+		// Attributes
 		this.error    = null
 		this.focus    = null
 		this.callBack = null
-		this.setButton()
+		this.formId   = null
 	}
-	setAction(callBack){
+	setAction(callBack, idButton = null, idForm = null){
 		this.callBack = callBack
+		this.setButton(idButton, idForm)
 	}
-	setButton(){
+	setButton(idButton = null, idForm = null){
 		const self = this;
-		document.querySelector('[data-bind="send"]').addEventListener('click', function (e) {
+		let buttonSelector = '[data-bind="send"]'
+		if(idButton != null)
+			buttonSelector = '#' + idButton + buttonSelector;
+		document.querySelector(buttonSelector).addEventListener('click', function (e) {
 			e.preventDefault();
-			self.check(e)
+			if(idForm != null)
+				self.check(idForm)
+			else
+				self.check(idForm)
 		});
 	}
-	check(){
+	check(idForm = null){
 		this.error = false
-		const forms = [...document.querySelectorAll('[data-validate="true"]')]
+		let selector = '[data-validate="true"]';
+		if (idForm != null) {
+			selector = '#' + idForm + selector;
+		}
+		const forms = [...document.querySelectorAll(selector)]
 		forms.map((form) => {
 			this.focus = null;
 			const required = [...form.querySelectorAll('[data-check="required"]')]
@@ -38,7 +52,6 @@ export class Validation {
 				this.callBack()
 		}
 		else{
-			console.log('Erro.')
 			this.focus.focus()
 		}
 	}
@@ -54,12 +67,12 @@ export class Validation {
 		this.resetError(element)
 		switch (type) {
 			case "required":
-				if (window.util.isEmpty(element.value))
+				if (this.util.isEmpty(element.value))
 					this.setError(element)
 				break;
 			case "email":
 				var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
-				if (!re.test(element.value) || this.isEmpty(element.value))
+				if (!re.test(element.value) || this.util.isEmpty(element.value))
 					this.setError(element)
 				break;
 			case "select":

@@ -12,6 +12,7 @@ export class Util {
         })
 	}
 	$(selection){
-		return document.querySelector(selection);
+		if (!this.isEmpty(document.querySelector(selection)))
+			return document.querySelector(selection);
 	}
 }
