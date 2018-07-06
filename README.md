@@ -11,25 +11,25 @@ So why do you need a lot of dependencies?
 They are:
 
 ```
-	"babel-core": "^6.26.3",
-	"babel-preset-es2015": "^6.24.1",
-	"babelify": "^8.0.0",
-	"bootstrap": "^4.1.1",
-	"browser-sync": "^2.24.5",
-	"browserify": "^16.2.2",
-	"gulp": "^3.9.1",
-	"gulp-babel": "^7.0.1",
-	"gulp-color": "0.0.2",
-	"gulp-cssmin": "^0.2.0",
-	"gulp-imagemin": "^4.1.0",
-	"gulp-rename": "^1.3.0",
-	"gulp-sass": "^4.0.1",
-	"gulp-svgo": "^1.5.4",
-	"gulp-uglify": "^3.0.0",
-	"jquery": "^3.3.1",
-	"popper.js": "^1.14.3",
-	"vinyl-buffer": "^1.0.1",
-	"vinyl-source-stream": "^2.0.0"
+"babel-core": "^6.26.3",
+"babel-preset-es2015": "^6.24.1",
+"babelify": "^8.0.0",
+"bootstrap": "^4.1.1",
+"browser-sync": "^2.24.5",
+"browserify": "^16.2.2",
+"gulp": "^3.9.1",
+"gulp-babel": "^7.0.1",
+"gulp-color": "0.0.2",
+"gulp-cssmin": "^0.2.0",
+"gulp-imagemin": "^4.1.0",
+"gulp-rename": "^1.3.0",
+"gulp-sass": "^4.0.1",
+"gulp-svgo": "^1.5.4",
+"gulp-uglify": "^3.0.0",
+"jquery": "^3.3.1",
+"popper.js": "^1.14.3",
+"vinyl-buffer": "^1.0.1",
+"vinyl-source-stream": "^2.0.0"
 ```
 
 Well, it's very nice to write modern JavaScript, but unfortunately our browsers dont have all support for that.
