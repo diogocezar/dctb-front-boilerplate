@@ -11,24 +11,25 @@ So why do you need a lot of dependencies?
 They are:
 
 ```
-"babel-core": "^6.26.3",
-"babel-preset-es2015": "^6.24.1",
-"babelify": "^8.0.0",
-"bootstrap": "^4.1.1",
-"browser-sync": "^2.24.5",
-"browserify": "^16.2.2",
-"gulp": "^3.9.1",
-"gulp-babel": "^7.0.1",
-"gulp-cssmin": "^0.2.0",
-"gulp-imagemin": "^4.1.0",
-"gulp-rename": "^1.3.0",
-"gulp-sass": "^4.0.1",
-"gulp-svgo": "^1.5.4",
-"gulp-uglify": "^3.0.0",
-"jquery": "^3.3.1",
-"popper.js": "^1.14.3",
-"vinyl-buffer": "^1.0.1",
-"vinyl-source-stream": "^2.0.0"
+	"babel-core": "^6.26.3",
+	"babel-preset-es2015": "^6.24.1",
+	"babelify": "^8.0.0",
+	"bootstrap": "^4.1.1",
+	"browser-sync": "^2.24.5",
+	"browserify": "^16.2.2",
+	"gulp": "^3.9.1",
+	"gulp-babel": "^7.0.1",
+	"gulp-color": "0.0.2",
+	"gulp-cssmin": "^0.2.0",
+	"gulp-imagemin": "^4.1.0",
+	"gulp-rename": "^1.3.0",
+	"gulp-sass": "^4.0.1",
+	"gulp-svgo": "^1.5.4",
+	"gulp-uglify": "^3.0.0",
+	"jquery": "^3.3.1",
+	"popper.js": "^1.14.3",
+	"vinyl-buffer": "^1.0.1",
+	"vinyl-source-stream": "^2.0.0"
 ```
 
 Well, it's very nice to write modern JavaScript, but unfortunately our browsers dont have all support for that.
@@ -40,6 +41,26 @@ For it, you can use a lot of things, but in my case i chose Browserfy with Babel
 And, i used gulp to produce all results of this.
 
 The most important thing in this project is the structure. I found a way to organize all these files to organize this repository making it deploy-read.
+
+## Pre-requisites
+
+To run this project you will need NodeJS and NPM installed on your developer machine.
+
+To verify this:
+
+```
+$ node --version
+```
+
+```
+$ npm --version
+```
+
+You will need to be installed gulp-cli globally:
+
+```
+$ npm install -g gulp-cli
+```
 
 ## Organization
 
@@ -101,6 +122,76 @@ In the _js_ folder we have:
     ├── index.bundle.js <- compiled file
     └── index.js <- original file
 ```
+
+## Install
+
+After clone this folder, you need to install all dependences running:
+
+```
+$ npm install
+```
+
+on root folder;
+
+## Avaliable commands
+
+It's avaliable a set of useful commands:
+
+```
+$ npm run serve
+```
+
+This command will serve your application;
+
+```
+$ npm run image
+```
+
+This command will search for images and will try to reduce their sizes;
+
+```
+$ npm run svg
+```
+
+This command will search for svgs and will try to reduce their sizes;
+
+```
+$ npm run sass
+```
+
+This command will compile all sass files on project;
+
+```
+$ npm run js
+```
+
+This command will create a bundle of all JavaScript files on project;
+
+```
+$ npm run watch
+```
+
+This command will be watching for files modification, and will try to automatically run corresponding taks;
+
+```
+$ npm run build
+```
+
+This command will execute a build read command to publish project;
+
+## Common Usage
+
+As you can see at js/common/common.js you can import here all external libs that you will use on your project.
+
+In this example, we can see JQuery, Popper.js and Bootstrap imported.
+
+Fell free to add another as you need.
+
+This common files, should be imported for all HTML's files, so... here you need to put your shared libs, that will be used by all your pages
+
+## Pages Usage
+
+For any new HTML page, you can create a new {page}.js files. You can import here libs that will be used only by this page.
 
 ## Conclusion
 
