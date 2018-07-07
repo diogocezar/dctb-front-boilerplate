@@ -14,13 +14,13 @@ export class Loader {
 		else{
 			const self = this
 			setTimeout(function(){
-				console.log('Loading...')
+				console.log('Still Loading...')
 				self.init();
 			}, this.configs.recheck);
 		}
 	}
 	pageLoaded(){
-		console.log('Page Loaded.')
+		console.log('Okay, page is loaded!')
 		$(this.configs.element).delay(this.configs.delay).fadeOut(this.configs.velocity);
 	}
 }

@@ -1,4 +1,4 @@
-export class Select2 {
+export class PluginSelect2 {
 	constructor() {
 		this.selects = [
 			'#exampleSelect1',

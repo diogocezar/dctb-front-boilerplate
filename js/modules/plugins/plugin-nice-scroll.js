@@ -1,4 +1,4 @@
-export class NiceScroll {
+export class PluginNiceScroll {
 	constructor() {
 		this.configs = {
 			'cursorwidth'        : "8px",

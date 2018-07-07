@@ -1,4 +1,4 @@
-export class InputMask {
+export class PluginInputMask {
 	constructor(){
 		this.init()
 	}

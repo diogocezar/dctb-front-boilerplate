@@ -1,4 +1,4 @@
-export class ConfigScrollReveal {
+export class PluginScrollReveal {
 	constructor() {
 		this.configs = {
 			'animationSet1' : {

@@ -20,14 +20,20 @@ They are:
 "gulp": "^3.9.1",
 "gulp-babel": "^7.0.1",
 "gulp-color": "0.0.2",
+"gulp-concat": "^2.6.1",
 "gulp-cssmin": "^0.2.0",
 "gulp-imagemin": "^4.1.0",
 "gulp-rename": "^1.3.0",
 "gulp-sass": "^4.0.1",
 "gulp-svgo": "^1.5.4",
 "gulp-uglify": "^3.0.0",
+"inputmask": "^4.0.0",
 "jquery": "^3.3.1",
-"popper.js": "^1.14.3",
+"jquery.mousewheel": "^3.1.9",
+"jquery.nicescroll": "^3.7.6",
+"owl.carousel": "^2.3.4",
+"scrollreveal": "^3.4.0",
+"select2": "^4.0.6-rc.1",
 "vinyl-buffer": "^1.0.1",
 "vinyl-source-stream": "^2.0.0"
 ```
@@ -121,6 +127,37 @@ In the _js_ folder we have:
 └── pages <- specific page javascript
     ├── index.bundle.js <- compiled file
     └── index.js <- original file
+
+
+.
+├── common <- common folder to store all funcionalities shared for all pates
+│   ├── common.bundle.js <- bundle file (compiled)
+│   └── common.js <- original file
+├── modules <- modules that can be imported depending of project
+│   ├── binds <- shared actions to bind
+│   │   └── shared-binds.js <- generic events
+│   ├── helpers <- helpers developed to help project
+│   │   ├── cookies.js <- cookies manipulation
+│   │   ├── mobile.js <- mobile check
+│   │   ├── util.js <- util functions
+│   │   └── validation.js <- simple form validation
+│   ├── loader <- page loader
+│   │   └── loader.js
+│   ├── menu <- page menu
+│   │   └── menu.js
+│   └── plugins <- plugins configuration
+│       ├── plugin-input-mask.js
+│       ├── plugin-nice-scroll.js
+│       ├── plugin-owl-carousel.js
+│       ├── plugin-scroll-reveal.js
+│       └── plugin-select2.js
+├── pages <- project pages
+│   └── index
+│       ├── binds-index.js <- actions binded
+│       ├── index.bundle.js <- bundle file (compiled)
+│       └── index.js <- original file
+└── vendor <- all vendor packages
+    └── vendor.js
 ```
 
 ## Install
@@ -179,15 +216,11 @@ $ npm run build
 
 This command will execute a build read command to publish project;
 
-## Common Usage
+```
+$ npm run vendor
+```
 
-As you can see at js/common/common.js you can import here all external libs that you will use on your project.
-
-In this example, we can see JQuery, Popper.js and Bootstrap imported.
-
-Fell free to add another as you need.
-
-This common files, should be imported for all HTML's files, so... here you need to put your shared libs, that will be used by all your pages
+This command will generate an unique, compressed file with all vendors dependencies.
 
 ## Pages Usage
 

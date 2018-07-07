@@ -1,4 +1,4 @@
-export class ButtonActions {
+export class SharedBinds {
 	constructor(){
 		this.init()
 	}

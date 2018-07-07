@@ -76,7 +76,7 @@ class Gulp{
 			this.startCommand()
 			this.logCommand('JS', 'Compiling JavaScript files.')
 			const files = [
-				'./js/pages/index.js',
+				'./js/pages/index/index.js',
 				'./js/common/common.js',
 			]
 			const tasks = files.map((entry) => {
@@ -94,7 +94,7 @@ class Gulp{
 						extname: '.bundle.js'
 					}))
 					.pipe(this.buffer())
-					//.pipe(this.uglify())
+					.pipe(this.uglify())
 					.pipe(this.self.dest('./'))
 				})
 		})
@@ -110,8 +110,7 @@ class Gulp{
 				'./node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js',
 				'./node_modules/owl.carousel/dist/owl.carousel.min.js',
 				'./node_modules/scrollreveal/dist/scrollreveal.min.js',
-				'./node_modules/select2/dist/js/select2.min.js',
-				'./node_modules/jquery.stellar/jquery.stellar.js'
+				'./node_modules/select2/dist/js/select2.min.js'
 			]
 			return this.self.src(files)
 				.pipe(this.concat('vendor.js'))
