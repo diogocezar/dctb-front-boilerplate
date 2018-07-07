@@ -1,19 +1,19 @@
 class Gulp{
 	constructor(){
-		this.self        = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp')
+		this.self        = require('gulp')
 		this.cssmin      = require('gulp-cssmin')
-		this.sass        = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp-sass')
+		this.sass        = require('gulp-sass')
 		this.svgo        = require('gulp-svgo')
 		this.imagemin    = require('gulp-imagemin')
-		this.browserSync = require('../../Library/Caches/typescript/2.9/node_modules/@types/browser-sync').create()
-		this.babelify    = require('../../Library/Caches/typescript/2.9/node_modules/@types/babelify')
-		this.browserify  = require('../../Library/Caches/typescript/2.9/node_modules/@types/browserify')
-		this.source      = require('../../Library/Caches/typescript/2.9/node_modules/@types/vinyl-source-stream')
-		this.rename      = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp-rename')
-		this.uglify      = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp-uglify')
-		this.buffer      = require('../../Library/Caches/typescript/2.9/node_modules/@types/vinyl-buffer')
+		this.browserSync = require('browser-sync').create()
+		this.babelify    = require('babelify')
+		this.browserify  = require('browserify')
+		this.source      = require('vinyl-source-stream')
+		this.rename      = require('gulp-rename')
+		this.uglify      = require('gulp-uglify')
+		this.buffer      = require('vinyl-buffer')
 		this.color       = require('gulp-color')
-		this.concat      = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp-concat')
+		this.concat      = require('gulp-concat')
 		this.createCommands();
 		this.defaultGulp();
 		this.watch();
