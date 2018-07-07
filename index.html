@@ -35,6 +35,8 @@
 		<link href="./assets/css/pages/index.css" rel="stylesheet" type="text/css"/>
 		<!-- Bootstrap -->
 		<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<!-- Select2 -->
+		<link href="./node_modules/select2/dist/css/select2.min.css" rel="stylesheet" />
 	</head>
 	<body>
 		<!-- Menu -->
@@ -107,7 +109,7 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleSelect">Size</label>
-									<select id="exampleSelect" data-check="select"  class="custom-select" >
+									<select id="exampleSelect1" data-check="select"  class="custom-select" >
 										<option value="0">Select one of them</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -133,7 +135,7 @@
 								</div>
 								<div class="form-group">
 									<label for="exampleSelect">Size</label>
-									<select id="exampleSelect" data-check="select"  class="custom-select" >
+									<select id="exampleSelect2" data-check="select"  class="custom-select" >
 										<option value="0">Select one of them</option>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -147,13 +149,15 @@
 				</div>
 			</section>
 			<!-- Footer -->
-			<footer>
+			<footer class="animation-1">
 				Scroll to here.
 			</footer>
 		</main>
+		<!-- Vendor -->
+		<script src="./js/vendor/vendor.js"></script>
 		<!-- Common -->
 		<script src="./js/common/common.bundle.js"></script>
-		<!-- Index -->
+		<!-- Index  -->
 		<script src="./js/pages/index.bundle.js"></script>
 	</body>
 </html>

@@ -10,6 +10,7 @@
 		"sass": "gulp sass",
 		"js": "gulp js",
 		"watch": "gulp watch",
+		"vendor": "gulp vendor",
 		"build": "gulp"
 	},
 	"repository": {
@@ -52,19 +53,22 @@
 		"gulp": "^3.9.1",
 		"gulp-babel": "^7.0.1",
 		"gulp-color": "0.0.2",
+		"gulp-concat": "^2.6.1",
 		"gulp-cssmin": "^0.2.0",
 		"gulp-imagemin": "^4.1.0",
 		"gulp-rename": "^1.3.0",
 		"gulp-sass": "^4.0.1",
 		"gulp-svgo": "^1.5.4",
 		"gulp-uglify": "^3.0.0",
+		"inputmask": "^4.0.0",
 		"jquery": "^3.3.1",
+		"jquery.mousewheel": "^3.1.9",
 		"jquery.nicescroll": "^3.7.6",
 		"owl.carousel": "^2.3.4",
 		"popper.js": "^1.14.3",
 		"scrollreveal": "^3.4.0",
+		"select2": "^4.0.6-rc.1",
 		"vinyl-buffer": "^1.0.1",
 		"vinyl-source-stream": "^2.0.0"
-	},
-	"dependencies": {}
+	}
 }

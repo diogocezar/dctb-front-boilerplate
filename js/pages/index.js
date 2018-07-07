@@ -3,7 +3,6 @@ class Index{
 		// Imports
 		this.validation = window.validation
 		this.util       = window.util
-		this.$          = window.$
 		// Calls
 		this.validateForm()
 		this.getJson()
@@ -11,7 +10,7 @@ class Index{
 	}
 	scrollTest(){
 		const self = this;
-		this.util.$('#scroll').addEventListener('click', function(e) {
+		$('#scroll').on('click', function(e) {
 			$('html, body').animate({ scrollTop: $('footer').offset().top }, 2000)
 			//self.util.$('footer').scrollIntoView({ behavior: 'smooth' })
 		})
@@ -30,4 +29,6 @@ class Index{
 	}
 }
 
-new Index()
+$(document).ready(function(){
+	new Index()
+})

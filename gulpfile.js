@@ -1,18 +1,19 @@
 class Gulp{
 	constructor(){
-		this.self        = require('gulp')
+		this.self        = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp')
 		this.cssmin      = require('gulp-cssmin')
-		this.sass        = require('gulp-sass')
+		this.sass        = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp-sass')
 		this.svgo        = require('gulp-svgo')
 		this.imagemin    = require('gulp-imagemin')
-		this.browserSync = require('browser-sync').create()
-		this.babelify    = require('babelify')
-		this.browserify  = require('browserify')
-		this.source      = require('vinyl-source-stream')
-		this.rename      = require('gulp-rename')
-		this.uglify      = require('gulp-uglify')
-		this.buffer      = require('vinyl-buffer')
+		this.browserSync = require('../../Library/Caches/typescript/2.9/node_modules/@types/browser-sync').create()
+		this.babelify    = require('../../Library/Caches/typescript/2.9/node_modules/@types/babelify')
+		this.browserify  = require('../../Library/Caches/typescript/2.9/node_modules/@types/browserify')
+		this.source      = require('../../Library/Caches/typescript/2.9/node_modules/@types/vinyl-source-stream')
+		this.rename      = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp-rename')
+		this.uglify      = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp-uglify')
+		this.buffer      = require('../../Library/Caches/typescript/2.9/node_modules/@types/vinyl-buffer')
 		this.color       = require('gulp-color')
+		this.concat      = require('../../Library/Caches/typescript/2.9/node_modules/@types/gulp-concat')
 		this.createCommands();
 		this.defaultGulp();
 		this.watch();
@@ -93,9 +94,29 @@ class Gulp{
 						extname: '.bundle.js'
 					}))
 					.pipe(this.buffer())
-					.pipe(this.uglify())
+					//.pipe(this.uglify())
 					.pipe(this.self.dest('./'))
 				})
+		})
+		// VendorDependences
+		this.self.task('vendor', () => {
+			this.startCommand()
+			this.logCommand('VENDOR', 'Creating vendor package file with all project dependences.')
+			const files = [
+				'./node_modules/jquery/dist/jquery.min.js',
+				'./node_modules/bootstrap/dist/js/bootstrap.min.js',
+				'./node_modules/inputmask/dist/min/jquery.inputmask.bundle.min.js',
+				'./node_modules/jquery-mousewheel/jquery.mousewheel.js',
+				'./node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js',
+				'./node_modules/owl.carousel/dist/owl.carousel.min.js',
+				'./node_modules/scrollreveal/dist/scrollreveal.min.js',
+				'./node_modules/select2/dist/js/select2.min.js',
+				'./node_modules/jquery.stellar/jquery.stellar.js'
+			]
+			return this.self.src(files)
+				.pipe(this.concat('vendor.js'))
+				.pipe(this.uglify())
+				.pipe(this.self.dest('./js/vendor'))
 		})
 	}
 	defaultGulp() {
