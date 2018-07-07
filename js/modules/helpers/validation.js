@@ -1,7 +1,7 @@
 export class Validation {
 	constructor(){
 		// Imports
-		this.util     = window.util
+		this.Util     = new window.util()
 		// Attributes
 		this.error    = null
 		this.focus    = null
@@ -67,12 +67,12 @@ export class Validation {
 		this.resetError(element)
 		switch (type) {
 			case "required":
-				if (this.util.isEmpty(element.value))
+				if (this.Util.isEmpty(element.value))
 					this.setError(element)
 				break;
 			case "email":
 				var re = /[A-Z0-9._%+-]+@[A-Z0-9.-]+.[A-Z]{2,4}/igm;
-				if (!re.test(element.value) || this.util.isEmpty(element.value))
+				if (!re.test(element.value) || this.Util.isEmpty(element.value))
 					this.setError(element)
 				break;
 			case "select":

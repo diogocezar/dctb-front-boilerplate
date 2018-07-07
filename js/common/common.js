@@ -2,10 +2,11 @@
 import { SharedBinds } from '../modules/binds/shared-binds'
 
 // Helpers
-import { Cookies }    from '../modules/helpers/cookies'
-import { Mobile }     from '../modules/helpers/mobile'
-import { Util }       from '../modules/helpers/util'
-import { Validation } from '../modules/helpers/validation'
+import { Cookies }     from '../modules/helpers/cookies'
+import { FormGetcher } from '../modules/helpers/form-getcher'
+import { Mobile }      from '../modules/helpers/mobile'
+import { Util }        from '../modules/helpers/util'
+import { Validation }  from '../modules/helpers/validation'
 
 // Loader
 import { Loader } from '../modules/loader/loader'
@@ -21,10 +22,11 @@ import { PluginScrollReveal } from '../modules/plugins/plugin-scroll-reveal'
 import { PluginSelect2 }      from '../modules/plugins/plugin-select2'
 
 // Exports
-window.cookies    = new Cookies()
-window.mobile     = new Mobile()
-window.util       = new Util()
-window.validation = new Validation()
+window.cookies     = Cookies
+window.mobile      = Mobile
+window.util        = Util
+window.validation  = Validation
+window.formGetcher = FormGetcher
 
 // Global Loader
 window.loader = new Loader()
@@ -42,10 +44,10 @@ class Common {
 		this.pluginOwlCarousel  = new PluginOwlCarousel()
 		this.pluginScrollReveal = new PluginScrollReveal()
 		this.pluginSelect2      = new PluginSelect2()
-		// Executors
-		this.execSample()
+		// Autoload
+		this.autoload()
 	}
-	execSample(){
+	autoload(){
 		console.log('Started Common.')
 	}
 }

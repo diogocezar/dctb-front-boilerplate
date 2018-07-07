@@ -121,23 +121,11 @@ In the _js_ folder we have:
 │   ├── common.bundle.js <- bundle file (compiled)
 │   └── common.js <- original file
 ├── modules <- modules that can be imported depending of project
-│   ├── cookies.js <- cookies manipulation
-│   ├── util.js <- some util functions
-│   └── validation.js <- simple form validation
-└── pages <- specific page javascript
-    ├── index.bundle.js <- compiled file
-    └── index.js <- original file
-
-
-.
-├── common <- common folder to store all funcionalities shared for all pates
-│   ├── common.bundle.js <- bundle file (compiled)
-│   └── common.js <- original file
-├── modules <- modules that can be imported depending of project
 │   ├── binds <- shared actions to bind
 │   │   └── shared-binds.js <- generic events
 │   ├── helpers <- helpers developed to help project
 │   │   ├── cookies.js <- cookies manipulation
+│   │   ├── form-getcher.js <- form helper to get data
 │   │   ├── mobile.js <- mobile check
 │   │   ├── util.js <- util functions
 │   │   └── validation.js <- simple form validation
