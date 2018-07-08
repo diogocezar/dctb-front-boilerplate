@@ -1,6 +1,6 @@
 export class Util {
 	dipatchMessage(msg){
-		console.log(`[LOG] ${msg}`)
+		console.info(`[LOG] ${msg}`)
 	}
 	dispatchError(msg){
 		console.error(`[ERROR] ${msg}`)

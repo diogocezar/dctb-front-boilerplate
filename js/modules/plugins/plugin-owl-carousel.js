@@ -12,13 +12,16 @@ export class PluginOwlCarousel {
 			'singleItem'         : true,
 			'smartSpeed'         : 700
 		}
+		this.elementsBinds = {
+			'default': '.carousel-default'
+		}
 		this.init()
 	}
 	init() {
-		$('.carousel-default').owlCarousel(this.configs);
-		$('.carousel-default').on('mouseout', function () {
-			$('.carousel-default').trigger('stop.owl.autoplay');
-			$('.carousel-default').trigger('play.owl.autoplay', [3000]);
+		$(`${this.elementsBinds.default}`).owlCarousel(this.configs);
+		$(`${this.elementsBinds.default}`).on('mouseout', function () {
+			$(`${this.elementsBinds.default}`).trigger('stop.owl.autoplay');
+			$(`${this.elementsBinds.default}`).trigger('play.owl.autoplay', [3000]);
 		});
 	}
 }

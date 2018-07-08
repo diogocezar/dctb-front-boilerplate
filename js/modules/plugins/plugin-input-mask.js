@@ -1,8 +1,11 @@
 export class PluginInputMask {
 	constructor(){
+		this.elementsBinds = {
+			'default': '.input-mask'
+		}
 		this.init()
 	}
 	init() {
-		$(".mask").inputmask();
+		$(`${this.elementsBinds.default}`).inputmask();
 	}
 }

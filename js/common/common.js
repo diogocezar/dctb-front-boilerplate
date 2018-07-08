@@ -1,6 +1,3 @@
-// Binds
-import { SharedBinds } from '../modules/binds/shared-binds'
-
 // Helpers
 import { Cookies }     from '../modules/helpers/cookies'
 import { FormGetcher } from '../modules/helpers/form-getcher'
@@ -42,8 +39,6 @@ class Common {
 		this.Util = window.util
 		// Menu
 		this.menu = new Menu()
-		// Binds
-		this.sharedBinds = new SharedBinds()
 		// Plugins
 		this.pluginInputMask    = new PluginInputMask()
 		this.pluginNiceScroll   = new PluginNiceScroll()
