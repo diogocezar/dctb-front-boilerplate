@@ -110,7 +110,8 @@ class Gulp{
 				'./node_modules/jquery.nicescroll/dist/jquery.nicescroll.min.js',
 				'./node_modules/owl.carousel/dist/owl.carousel.min.js',
 				'./node_modules/scrollreveal/dist/scrollreveal.min.js',
-				'./node_modules/select2/dist/js/select2.min.js'
+				'./node_modules/select2/dist/js/select2.min.js',
+				'./node_modules/axios/dist/axios.min.js'
 			]
 			return this.self.src(files)
 				.pipe(this.concat('vendor.js'))
