@@ -6,6 +6,7 @@ export class Loader {
 			'velocity' : "slow",
 			'element'  : '#loader'
 		}
+		this.Util = window.util
 		this.init();
 	}
 	init(){
@@ -14,13 +15,13 @@ export class Loader {
 		else{
 			const self = this
 			setTimeout(function(){
-				console.log('Still Loading...')
+				self.Util.dipatchMessage('Still Loading...')
 				self.init();
 			}, this.configs.recheck);
 		}
 	}
 	pageLoaded(){
-		console.log('Okay, page is loaded!')
+		this.Util.dipatchMessage('Okay, page is loaded!')
 		$(this.configs.element).delay(this.configs.delay).fadeOut(this.configs.velocity);
 	}
 }

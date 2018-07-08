@@ -3,7 +3,7 @@ import { ActionsIndex } from './actions/actions-index'
 class Index{
 	constructor(){
 		// Imports
-		this.util = new window.util()
+		this.Util = window.util
 		// Autoload
 		this.autoload()
 	}
@@ -12,9 +12,9 @@ class Index{
 	}
 	execJoker() {
 		const url = 'http://api.icndb.com/jokes/random'
-		this.util.fetch(url)
+		this.Util.fetch(url)
 			.then(data => {
-				this.util.$('.load-joke').innerHTML = data.value.joke
+				this.Util.$('.load-joke').innerHTML = data.value.joke
 			})
 	}
 	execSendForm1() {

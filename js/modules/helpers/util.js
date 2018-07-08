@@ -1,4 +1,10 @@
 export class Util {
+	dipatchMessage(msg){
+		console.log(`[LOG] ${msg}`)
+	}
+	dispatchError(msg){
+		console.error(`[ERROR] ${msg}`)
+	}
     isEmpty(value) {
         return (value == "" || value == null || value == undefined)
     }

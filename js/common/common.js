@@ -7,6 +7,7 @@ import { FormGetcher } from '../modules/helpers/form-getcher'
 import { Mobile }      from '../modules/helpers/mobile'
 import { Util }        from '../modules/helpers/util'
 import { Validation }  from '../modules/helpers/validation'
+import { WebStorage }  from '../modules/helpers/webstorage'
 
 // Loader
 import { Loader } from '../modules/loader/loader'
@@ -21,12 +22,15 @@ import { PluginOwlCarousel }  from '../modules/plugins/plugin-owl-carousel'
 import { PluginScrollReveal } from '../modules/plugins/plugin-scroll-reveal'
 import { PluginSelect2 }      from '../modules/plugins/plugin-select2'
 
-// Exports
+// Exports Imutables
+window.util        = new Util()
+
+// Exports Constructors
 window.cookies     = Cookies
 window.mobile      = Mobile
-window.util        = Util
 window.validation  = Validation
 window.formGetcher = FormGetcher
+window.webstorage  = WebStorage
 
 // Global Loader
 window.loader = new Loader()
@@ -34,6 +38,8 @@ window.loaded = false
 
 class Common {
     constructor(){
+		// Util
+		this.Util = window.util
 		// Menu
 		this.menu = new Menu()
 		// Binds
@@ -48,7 +54,7 @@ class Common {
 		this.autoload()
 	}
 	autoload(){
-		console.log('Started Common.')
+		this.Util.dipatchMessage('Started Common.')
 	}
 }
 

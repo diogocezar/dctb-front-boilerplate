@@ -1,7 +1,7 @@
 export class Validation {
 	constructor(){
 		// Imports
-		this.Util     = new window.util()
+		this.Util     = window.util
 		// Attributes
 		this.error    = null
 		this.focus    = null

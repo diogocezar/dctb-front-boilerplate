@@ -3,19 +3,19 @@
 
 export class Mobile {
 	constructor(){
-		this.isMobile = null
+		this.isMobile   = null
 		this.mobileType = null
 		this.init()
 	}
 	init(){
 		if ($.browser.mobile || $(document).width() < 991) {
-			this.isMobile = true;
+			this.isMobile   = true;
 			this.mobileType = this.getType();
 		}else
 			this.isMobile = false;
 	}
 	getType(){
-		var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+		let userAgent = navigator.userAgent || navigator.vendor || window.opera;
 		if (userAgent.match(/iPad/i) || userAgent.match(/iPhone/i) || userAgent.match(/iPod/i))
 			return 'iOS';
 		else if (userAgent.match(/Android/i))
