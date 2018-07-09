@@ -1,5 +1,5 @@
 import { ActionsIndex } from './actions/actions-index'
-const axios = require('axios')
+import axios from 'axios'
 
 class Index{
 	constructor(){
