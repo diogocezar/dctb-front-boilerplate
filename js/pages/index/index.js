@@ -1,4 +1,4 @@
-import { ActionsIndex } from './actions/actions-index'
+import { ActionsIndex } from 'actions-index'
 import axios from 'axios'
 
 class Index{

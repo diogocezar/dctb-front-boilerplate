@@ -137,9 +137,9 @@ class Gulp{
 	runBasicWatch(){
 		this.logCommand('WATCH', 'Watching SASS, JavaScript and HTML changes.')
 		// Sass Changes
-		this.self.watch('./assets/scss/**', ['sass'])
+		this.self.watch('./assets/scss/**', ['sass', this.browserSync.reload])
 		// JavaScript Changes
-		this.self.watch(['./js/**/*.js', '!./js/**/*.bundle.js'], ['js', this.browserSync.reload])
+		this.self.watch(['./js/pages/**/*.js', './js/**/*.js', '!./js/**/*.bundle.js', '!./js/pages/**/*.bundle.js'], ['js', this.browserSync.reload])
 		// HTML changes
 		this.self.watch('./*.html').on('change', () => {
 			this.logCommand('HTML', 'Changed')

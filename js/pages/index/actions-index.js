@@ -19,7 +19,7 @@ export class ActionsIndex {
 		$('#scroll').on('click', function (e) {
 			$('html, body').animate({
 				scrollTop: $('footer').offset().top
-			}, 2000)
+			}, 1000)
 		})
 	}
 	bindValidations(){
