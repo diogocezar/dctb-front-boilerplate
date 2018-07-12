@@ -141,7 +141,7 @@ In the _js_ folder we have:
 │       └── plugin-select2.js
 ├── pages <- project pages
 │   └── index
-│       ├── binds-index.js <- actions binded
+│       ├── actions-index.js <- actions binded
 │       ├── index.bundle.js <- bundle file (compiled)
 │       └── index.js <- original file
 └── vendor <- all vendor packages

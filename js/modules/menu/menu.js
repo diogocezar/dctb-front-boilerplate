@@ -1,10 +1,10 @@
 export class Menu {
 	constructor() {
 		this.configs = {
-			'senseSpeed'    : 5,
-			'previusScroll' : 0,
-			'imediate'      : 10,
-			'openMenu'      : false,
+			'senseSpeed': 5,
+			'previusScroll': 0,
+			'imediate': 10,
+			'openMenu': false,
 		}
 		this.init()
 	}
@@ -13,11 +13,12 @@ export class Menu {
 		this.setHamburguer()
 		this.setLinks()
 	}
-	debounce(func, wait, immediate){
+	debounce(func, wait, immediate) {
 		let timeout
-		return function() {
-			let context = this, args = arguments
-			let later = function() {
+		return function () {
+			let context = this,
+				args = arguments
+			let later = function () {
 				timeout = null
 				if (!immediate) func.apply(context, args)
 			}
@@ -27,17 +28,14 @@ export class Menu {
 			if (callNow) func.apply(context, args)
 		}
 	}
-	setHamburguer(){
-		$(".hamburguer").on("click", function(e) {
+	setHamburguer() {
+		$(".hamburguer").on("click", function (e) {
 			e.preventDefault();
 			$(this).toggleClass("active");
 			$(".menu-mobile").toggleClass("active");
 			setTimeout(function () {
 				$(".menu-mobile").toggleClass("end");
 			}, 500);
-			if ($(".menu-translate").hasClass('active')) {
-				$(".menu-translate").toggleClass("active");
-			}
 		});
 	}
 	setDebounce() {
@@ -65,29 +63,20 @@ export class Menu {
 		}
 		this.configs.previousScroll = scroller;
 	}
-	setLinks(){
-		$(".go-menu").on("click", function (e) {
+	setLinks() {
+		$('[data-menu="true"]').on("click", function (e) {
 			e.preventDefault();
 			if ($(".menu-mobile").hasClass('active')) {
-				$(".hamburguer").toggleClass("active");
-				$(".menu-mobile").toggleClass("active");
+				$(".hamburguer").toggleClass("active")
+				$(".menu-mobile").toggleClass("active")
 				setTimeout(function () {
-					$(".menu-mobile").toggleClass("end");
-				}, 500);
+					$(".menu-mobile").toggleClass("end")
+				}, 500)
 			}
-			let o = $(this);
-			let plus = 30;
-			if (o.attr("href") === '#trabalhe-conosco') {
-				plus = 0;
-			}
+			let o = $(this)[0]
 			$("html, body").stop().animate({
-				scrollTop: $(o.attr("href")).offset().top - plus
-			}, 1e3, "easeOutQuart", function () {
-				if (o.attr("href") !== '#seja-um-franqueado') {
-					$('#header-menu').addClass('off');
-					$('#header-menu').removeClass('on');
-				}
-			});
+				scrollTop: $(o.hash).offset().top
+			}, 1000);
 		})
 	}
 }
